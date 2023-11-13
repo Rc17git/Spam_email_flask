@@ -9,9 +9,8 @@
 <body>
     <h1>Email Classification</h1>
     <form method="POST" action="/">
-        {{ form.hidden_tag() }}
-        {{ form.email_content.label }}<br>
-        {{ form.email_content(size=50) }}<br><br>
+        <label for="email_content">Email Content:</label><br>
+        <textarea name="email_content" rows="4" cols="50"></textarea><br><br>
         <input type="submit" value="Classify">
     </form>
 </body>
