@@ -1,12 +1,9 @@
 from flask import Flask, render_template, request
 import numpy as np
-from sklearn.model_selection import train_test_split
 import keras
-import tensorflow as tf
 from keras.models import load_model
 import pickle
 from keras.preprocessing.sequence import pad_sequences
-from asgiref.wsgi import WsgiToAsgi
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
@@ -32,5 +29,4 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    asgi_app = WsgiToAsgi(app)
-    asgi_app.run(debug=True)
+    app.run(debug=True, port=5002)
